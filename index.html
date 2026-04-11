@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fedora – Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #f0ede8;
+      --muted: #555250;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HERO */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      font-weight: 300;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--white);
+      animation: rise 1.4s cubic-bezier(0.16,1,0.3,1) both;
+    }
+
+    .sub {
+      margin-top: 1.6rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--muted);
+      animation: rise 1.4s 0.3s cubic-bezier(0.16,1,0.3,1) both;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 1.2rem 2rem;
+      text-align: center;
+    }
+
+    footer a {
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #2a2825;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer a:hover { color: var(--muted); }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <!-- Sostituisci con <img src="logo.png" style="height:60px; margin-bottom:2rem;"> -->
+    <p class="logo-name">Fedora</p>
+    <p class="sub">Coming Soon</p>
+  </section>
+
+  <footer>
+    <a href="trasparenza.html">Informativa startup innovativa – art. 25 comma 11 D.L. 179/2012</a>
+  </footer>
+
+</body>
+</html>
