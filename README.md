@@ -1,33 +1,7 @@
-# Fedora – Come mettere online il sito
+# Tauer Energy Labs website
 
-## 1. Crea il repository e carica i file
-1. Su GitHub crea un nuovo repository pubblico
-2. Carica dentro: `index.html`, `trasparenza.html`, `logo.png` (se vuoi)
-3. Clicca **Commit changes**
+This repository contains the temporary Tauer Energy Labs landing page and the startup disclosure page. The full website is being developed separately.
 
----
+The landing page uses the selected Panorama design (Variant A). Run `python3 -m http.server 8000` and open `http://localhost:8000/` to preview it. See [PROTOTYPE.md](PROTOTYPE.md) for the design decision and archived comparison reference.
 
-## 2. Attiva GitHub Pages
-1. Vai su **Settings** del repository
-2. Menu a sinistra → **Pages**
-3. Branch: **main** → cartella **/ (root)** → **Save**
-
-Il sito è già online su `https://tuonome.github.io/nome-repository/`
-
----
-
-## 3. Collega il dominio
-1. Sempre in **Settings → Pages**, campo **Custom domain** → scrivi `www.tuodominio.qualocsa` → **Save**
-2. Vai nel pannello DNS del tuo registrar (Aruba, Register, GoDaddy…)
-3. Aggiungi questi record:
-
-| Tipo  | Nome | Valore            |
-|-------|------|-------------------|
-| A     | @    | 185.199.108.153   |
-| A     | @    | 185.199.109.153   |
-| A     | @    | 185.199.110.153   |
-| A     | @    | 185.199.111.153   |
-| CNAME | www  | tuonome.github.io |
-
-4. Aspetta 10–30 minuti
-5. Torna su GitHub Pages e spunta **Enforce HTTPS**
+The branding files in this prototype come from the supplied LinkedIn assets: `Logo.png` and `banner.png`. The disclosure page still has fields marked `[da compilare]`; complete and review them before publication.

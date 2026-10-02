@@ -1,93 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tauer Energy Labs – Coming Soon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0051ff">
+  <meta name="description" content="Tauer Energy Labs sviluppa software per la simulazione energetica degli edifici. Il nuovo sito è in arrivo.">
+  <title>Tauer Energy Labs — Sito in arrivo</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    @font-face { font-family: Space Grotesk; src: url('space-grotesk.woff2') format('woff2'); font-display: swap; }
+    @font-face { font-family: Geist Mono; src: url('geist-mono.woff2') format('woff2'); font-display: swap; }
+    :root { --electric: #0051ff; --ice: #78a0ff; --orange: #ff9b13; --night: #0b0d12; --white: #f2f4f8; --muted: #bec8d7; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { min-height: 100%; }
+    body { margin: 0; min-height: 100vh; color: var(--white); background: var(--night); font-family: Space Grotesk, Arial, sans-serif; }
+    a { color: inherit; }
+    .concept { position: relative; display: flex; flex-direction: column; min-height: 100svh; overflow: hidden; }
+    .concept > * { position: relative; z-index: 1; }
+    .mono { font-family: Geist Mono, ui-monospace, monospace; font-size: .68rem; font-weight: 400; letter-spacing: .14em; line-height: 1.5; text-transform: uppercase; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand-name { display: block; font-size: 1.12rem; line-height: .9; font-weight: 700; letter-spacing: -.06em; }
+    .brand-name small { display: block; margin-top: 7px; font-family: Geist Mono, monospace; font-size: .54rem; font-weight: 400; letter-spacing: .21em; }
+    .legal { color: #d4dcf0; font-size: .72rem; text-decoration: none; }
+    .legal:hover, .legal:focus-visible { text-decoration: underline; }
 
-    :root {
-      --black: #0a0a0a;
-      --white: #f0ede8;
-      --muted: #555250;
+    /* A — Panorama: the brand artwork fills the screen; site language supplies the message. */
+    .a { --gutter: clamp(26px, 7.5vw, 120px); background: #064de9 url('banner.png') center / cover no-repeat; }
+    .a::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #080d1beb 0%, #0b154bd9 39%, #003bcc46 78%, #003bcc18 100%); }
+    .a-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 27px clamp(26px, 5vw, 78px); }
+    .a-header { padding: 32px var(--gutter); }
+    .a-header .mono { color: #c6d3ec; font-size: .63rem; }
+    .a-header .brand { gap: 15px; }
+    .a-header .brand-artwork { display: block; flex: none; width: 59px; height: 59px; object-fit: contain; border-radius: 2px; box-shadow: 0 0 0 1px #ffffff14; }
+    .a-header .brand-name { font-size: 1.7rem; line-height: 1; font-weight: 500; letter-spacing: -.015em; }
+    .a-header .brand-name small { margin-top: 9px; font-family: Space Grotesk, Arial, sans-serif; font-size: .6rem; line-height: 1.4; letter-spacing: .2em; }
+    .a-header .brand:focus-visible { outline: 2px solid var(--orange); outline-offset: 8px; }
+    .a-main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 56px var(--gutter) 72px; }
+    .a-index { color: #e1e9ff; display: flex; align-items: center; gap: 16px; margin: 0 0 36px; line-height: 1.8; }
+    .a-index::before { content: ''; flex: none; width: 45px; height: 1px; background: var(--orange); }
+    .a h1 { max-width: 1100px; margin: 0; font-size: clamp(4rem, 7.8vw, 8rem); font-weight: 500; line-height: 1.12; letter-spacing: -.015em; }
+    .a h1 span { display: block; color: #91b0ff; }
+    .a-summary { max-width: 620px; margin: 36px 0 0; color: #e8edfa; font-size: clamp(1.03rem, 1.65vw, 1.25rem); line-height: 1.7; }
+    .a-summary span { display: block; margin-top: 18px; color: #c6d3ec; font-size: .88em; }
+    .a-footer { display: grid; grid-template-columns: 1fr 1fr auto; align-items: end; gap: 28px; padding: 24px var(--gutter) 32px; border-top: 1px solid #ffffff30; background: linear-gradient(#0a1b5570, #061746ad); }
+    .a-footer .mono { color: #b9c9e8; }
+    .a-footer strong { display: block; margin-top: 10px; font-size: .96rem; font-weight: 500; line-height: 1.6; }
+
+    @media (max-width: 900px) {
+      .a-footer { grid-template-columns: 1fr 1fr; }
+      .a-footer .legal { grid-column: 1 / -1; }
     }
-
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* HERO */
-    .hero {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-
-    .logo-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 8vw, 5rem);
-      font-weight: 300;
-      letter-spacing: 0.5em;
-      text-transform: uppercase;
-      color: var(--white);
-      animation: rise 1.4s cubic-bezier(0.16,1,0.3,1) both;
-    }
-
-    .sub {
-      margin-top: 1.6rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--muted);
-      animation: rise 1.4s 0.3s cubic-bezier(0.16,1,0.3,1) both;
-    }
-
-    /* FOOTER */
-    footer {
-      padding: 1.2rem 2rem;
-      text-align: center;
-    }
-
-    footer a {
-      font-size: 0.55rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #2a2825;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    footer a:hover { color: var(--muted); }
-
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+    @media (max-width: 640px) {
+      .brand-name { font-size: .98rem; }
+      .brand-name small { font-size: .48rem; }
+      .a-header { padding: 19px 24px; }
+      .a-header > .mono { display: none; }
+      .a-header .brand { gap: 13px; }
+      .a-header .brand-artwork { width: 50px; height: 50px; }
+      .a-header .brand-name { font-size: 1.5rem; }
+      .a-header .brand-name small { font-size: .53rem; }
+      .a { background-position: 45% center; }
+      .a::before { background: linear-gradient(180deg, #07154bd0, #07154b87 70%, #041754d9); }
+      .a-main { padding: 72px 24px 64px; }
+      .a-index { margin-bottom: 24px; }
+      .a h1 { font-size: clamp(2.65rem, 11.8vw, 4.7rem); line-height: 1.15; }
+      .a-summary { margin-top: 30px; }
+      .a-footer { grid-template-columns: 1fr; gap: 17px; padding: 20px 24px 32px; }
+      .a-footer .legal { grid-column: auto; }
     }
   </style>
 </head>
 <body>
+  <main>
+    <section class="concept a" aria-label="Panorama" lang="it">
+      <header class="a-header">
+        <a class="brand" href="index.html" aria-label="Tauer Energy Labs">
+          <img class="brand-artwork" src="Logo.png" width="64" height="64" alt="">
+          <span class="brand-name">Tauer<small>ENERGY LABS</small></span>
+        </a>
+        <span class="mono">Sito in arrivo&nbsp; / &nbsp;Padova, Italia</span>
+      </header>
+      <div class="a-main">
+        <p class="mono a-index">Tauer Energy Labs · Ricerca applicata</p>
+        <h1>Dalla ricerca<br><span>al software.</span></h1>
+        <p class="a-summary">Simulazione energetica e scenari di riqualificazione per chi progetta, gestisce e trasforma gli edifici.<span>Il nostro nuovo sito è in arrivo.</span></p>
+      </div>
+      <footer class="a-footer">
+        <div><span class="mono">01 / Cosa facciamo</span><strong>Energia degli edifici, letta meglio.</strong></div>
+        <div><span class="mono">02 / Cosa arriva</span><strong>MasterB e il nuovo sito Tauer.</strong></div>
+        <a class="legal" href="trasparenza.html">Informativa startup innovativa ↗</a>
+      </footer>
+    </section>
 
-  <section class="hero">
-    <!-- <img src="logo.jpg" style="height:100px; margin-bottom:2rem;"> -->
-    <p class="logo-name">Tauer Energy Labs</p>
-    <p class="sub">Coming Soon</p>
-  </section>
-
-  <footer>
-    <a href="trasparenza.html">Informativa startup innovativa – art. 25 comma 11 D.L. 179/2012</a>
-  </footer>
-
+  </main>
 </body>
 </html>
